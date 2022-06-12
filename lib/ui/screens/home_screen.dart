@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 //i did not place the widgets in different files, i guess that it is easy to review the code in same file
 //it is possible to wide general structure of app, with services, localization, etc.
 //i set one cell with as chart widget width / 5, because if it is 10, it will not be nice to see elements exactly
+//i make the pagination related to scrolling
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
