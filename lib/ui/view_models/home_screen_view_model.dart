@@ -16,7 +16,6 @@ class HomeScreenViewModel extends RxController {
   late bool isTodayIncluded = false;
   int get dayCount => isTodayIncluded ? 10 : 11;
   DateTime get endDate => startDate.add(Duration(days: dayCount));
-  final int fakeDateLentgh = -500;
 
   late final IBaseCommand getDateRangedDataCommand;
 
