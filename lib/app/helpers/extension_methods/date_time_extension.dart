@@ -3,6 +3,10 @@ extension DateTimeExtension on DateTime {
     return isAfter(startDate) && isBefore(endDate);
   }
 
+  bool isSameDate(DateTime other) {
+    return year == other.year && month == other.month && day == other.day;
+  }
+
   String getDayName() {
     String name = '';
     switch (weekday) {

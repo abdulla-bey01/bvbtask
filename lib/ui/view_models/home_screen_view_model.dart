@@ -13,7 +13,8 @@ class HomeScreenViewModel extends RxController {
   }
 
   late DateTime startDate;
-  final int dayCount = 10;
+  late bool isTodayIncluded = false;
+  int get dayCount => isTodayIncluded ? 10 : 11;
   DateTime get endDate => startDate.add(Duration(days: dayCount));
   final int fakeDateLentgh = -500;
 
@@ -22,9 +23,9 @@ class HomeScreenViewModel extends RxController {
   late final ScrollController scrollController;
 
   HomeScreenViewModel() {
-    startDate = DateTime.now().add(const Duration(days: -11));
+    startDate = DateTime.now().add(const Duration(days: -10));
+    isTodayIncluded = true;
     _dataList = <DataModel>[].obs;
-
     getDateRangedDataCommand = GetDateRangedDataCommand();
     getDateRangedDataCommand.doExecute({'vm': this});
 

@@ -11,7 +11,7 @@ class FakeDataRepository extends IDataRepository {
 
     _fakeDataList = [];
 
-    for (var i = 0; i < fakeListLenthg; i++) {
+    for (var i = 0; i <= fakeListLenthg; i++) {
       int randomGreenValue = random.nextInt(100);
       int randomPinkValue = random.nextInt(100);
       int randomBlueValue = random.nextInt(100);
