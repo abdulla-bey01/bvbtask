@@ -22,7 +22,7 @@ class HomeScreenViewModel extends RxController {
   late final ScrollController scrollController;
 
   HomeScreenViewModel() {
-    startDate = DateTime.now().add(Duration(days: fakeDateLentgh));
+    startDate = DateTime.now().add(const Duration(days: -11));
     _dataList = <DataModel>[].obs;
 
     getDateRangedDataCommand = GetDateRangedDataCommand();
@@ -32,7 +32,7 @@ class HomeScreenViewModel extends RxController {
     scrollController.addListener(() {
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
-        startDate = endDate;
+        startDate = endDate.add(const Duration(days: -20));
         getDateRangedDataCommand.doExecute({'vm': this});
       }
     });

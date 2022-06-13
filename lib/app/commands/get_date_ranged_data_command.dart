@@ -16,6 +16,6 @@ class GetDateRangedDataCommand extends IBaseCommand {
     final startDate = homeScreenViewModel.startDate;
     final endDate = homeScreenViewModel.endDate;
     final dataList = await dataRepository.getByDateRange(startDate, endDate);
-    homeScreenViewModel.addDataToList(dataList);
+    homeScreenViewModel.addDataToList(dataList.reversed.toList());
   }
 }
